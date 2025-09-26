@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="120" height="32" viewBox="0 0 120 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22.95 2.112L12.9 0L2.85 2.112L0 12.8L2.85 23.488L12.9 25.6L22.95 23.488L25.8 12.8L22.95 2.112Z" fill="#2E487B"/>
+  <path d="M12.9 4.16L5.7 6.4V19.2L12.9 21.44L20.1 19.2V6.4L12.9 4.16Z" fill="#F4511E"/>
+  <text x="28" y="22" font-family="Arial" font-size="16" font-weight="bold" fill="#2E487B">FlexiPDF</text>
+</svg> 
