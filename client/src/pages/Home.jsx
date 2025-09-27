@@ -7,6 +7,14 @@ import {
   ScissorsIcon,
   BoltIcon,
   StarIcon,
+  TableCellsIcon,
+  PresentationChartBarIcon,
+  PencilIcon,
+  SparklesIcon,
+  ClipboardDocumentCheckIcon,
+  ArrowPathIcon,
+  RectangleStackIcon,
+  LockClosedIcon,
 } from '@heroicons/react/24/outline';
 import GoogleAd from '../components/GoogleAd';
 
@@ -28,6 +36,38 @@ const tools = [
     href: '/pdf-to-word',
     category: 'Convert',
     popular: true,
+    color: 'from-emerald-500 to-teal-500',
+  },
+  {
+    name: 'Excel to PDF',
+    description: 'Convert Excel spreadsheets to PDF',
+    icon: TableCellsIcon,
+    href: '/excel-to-pdf',
+    category: 'Convert',
+    color: 'from-emerald-500 to-teal-500',
+  },
+  {
+    name: 'PDF to Excel',
+    description: 'Convert PDF tables to Excel format',
+    icon: TableCellsIcon,
+    href: '/pdf-to-excel',
+    category: 'Convert',
+    color: 'from-emerald-500 to-teal-500',
+  },
+  {
+    name: 'PowerPoint to PDF',
+    description: 'Convert presentations to PDF',
+    icon: PresentationChartBarIcon,
+    href: '/powerpoint-to-pdf',
+    category: 'Convert',
+    color: 'from-emerald-500 to-teal-500',
+  },
+  {
+    name: 'PDF to PowerPoint',
+    description: 'Convert PDF to editable presentations',
+    icon: PresentationChartBarIcon,
+    href: '/pdf-to-powerpoint',
+    category: 'Convert',
     color: 'from-emerald-500 to-teal-500',
   },
   {
@@ -67,6 +107,60 @@ const tools = [
     popular: true,
     color: 'from-blue-500 to-indigo-500',
   },
+  {
+    name: 'Rotate PDF',
+    description: 'Rotate PDF pages to the correct orientation',
+    icon: ArrowPathIcon,
+    href: '/rotate-pdf',
+    category: 'Organize',
+    color: 'from-blue-500 to-indigo-500',
+  },
+  {
+    name: 'Extract Pages',
+    description: 'Extract specific pages from PDF',
+    icon: RectangleStackIcon,
+    href: '/extract-pages',
+    category: 'Organize',
+    color: 'from-blue-500 to-indigo-500',
+  },
+
+  // Editor Tools
+  {
+    name: 'Edit PDF',
+    description: 'Edit text, images, and more in your PDF',
+    icon: PencilIcon,
+    href: '/edit-pdf',
+    category: 'Editor',
+    popular: true,
+    color: 'from-purple-500 to-pink-500',
+  },
+  {
+    name: 'Sign PDF',
+    description: 'Add digital signatures to your PDF',
+    icon: ClipboardDocumentCheckIcon,
+    href: '/sign-pdf',
+    category: 'Editor',
+    popular: true,
+    color: 'from-purple-500 to-pink-500',
+  },
+  {
+    name: 'Add Watermark',
+    description: 'Add text or image watermarks to PDF',
+    icon: SparklesIcon,
+    href: '/add-watermark',
+    category: 'Editor',
+    color: 'from-purple-500 to-pink-500',
+  },
+
+  // Security Tools
+  {
+    name: 'Protect PDF',
+    description: 'Add password protection to PDF',
+    icon: LockClosedIcon,
+    href: '/protect-pdf',
+    category: 'Security',
+    color: 'from-red-500 to-orange-500',
+  },
 
   // Optimize Tools
   {
@@ -80,7 +174,7 @@ const tools = [
   },
 ];
 
-const categories = ['Convert', 'Organize', 'Optimize'];
+const categories = ['Convert', 'Organize', 'Editor', 'Security', 'Optimize'];
 const popularTools = tools.filter(tool => tool.popular);
 
 export default function Home() {
@@ -98,7 +192,7 @@ export default function Home() {
           <div className="text-center mb-12">
             <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-blue-100 to-purple-100 text-blue-800 px-4 py-2 rounded-full text-sm font-semibold mb-4">
               <BoltIcon className="h-4 w-4" />
-              <span>Essential PDF Toolkit</span>
+              <span>Enhanced PDF Toolkit</span>
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
               Core{' '}
@@ -106,7 +200,7 @@ export default function Home() {
               {' '}you need
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              8 essential PDF tools for conversion, organization, and optimization. Fast, reliable, and always free.
+              18 essential PDF tools for conversion, organization, editing, security, and optimization. Fast, reliable, and always free.
             </p>
           </div>
 
@@ -116,6 +210,8 @@ export default function Home() {
               const gradients = {
                 'Convert': 'from-emerald-500 to-teal-500',
                 'Organize': 'from-blue-500 to-indigo-500',
+                'Editor': 'from-purple-500 to-pink-500',
+                'Security': 'from-red-500 to-orange-500',
                 'Optimize': 'from-orange-500 to-red-500'
               };
               

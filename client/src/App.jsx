@@ -12,6 +12,16 @@ import WordToPdf from './pages/WordToPdf';
 import PdfToJpg from './pages/PdfToJpg';
 import JpgToPdf from './pages/JpgToPdf';
 import SplitPdf from './pages/SplitPdf';
+import ExcelToPdf from './pages/ExcelToPdf';
+import PdfToExcel from './pages/PdfToExcel';
+import PowerPointToPdf from './pages/PowerPointToPdf';
+import PdfToPowerPoint from './pages/PdfToPowerPoint';
+import EditPdf from './pages/EditPdf';
+import AddWatermark from './pages/AddWatermark';
+import SignPdf from './pages/SignPdf';
+import RotatePdf from './pages/RotatePdf';
+import ExtractPages from './pages/ExtractPages';
+import ProtectPdf from './pages/ProtectPdf';
 
 function App() {
   return (
@@ -22,12 +32,22 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/word-to-pdf" element={<WordToPdf />} />
+          <Route path="/excel-to-pdf" element={<ExcelToPdf />} />
+          <Route path="/powerpoint-to-pdf" element={<PowerPointToPdf />} />
           <Route path="/jpg-to-pdf" element={<JpgToPdf />} />
           <Route path="/pdf-to-word" element={<PdfToWord />} />
+          <Route path="/pdf-to-excel" element={<PdfToExcel />} />
+          <Route path="/pdf-to-powerpoint" element={<PdfToPowerPoint />} />
           <Route path="/pdf-to-jpg" element={<PdfToJpg />} />
           <Route path="/merge-pdf" element={<MergePdf />} />
           <Route path="/split-pdf" element={<SplitPdf />} />
+          <Route path="/rotate-pdf" element={<RotatePdf />} />
+          <Route path="/extract-pages" element={<ExtractPages />} />
+          <Route path="/edit-pdf" element={<EditPdf />} />
+          <Route path="/add-watermark" element={<AddWatermark />} />
+          <Route path="/sign-pdf" element={<SignPdf />} />
           <Route path="/compress-pdf" element={<CompressPdf />} />
+          <Route path="/protect-pdf" element={<ProtectPdf />} />
         </Routes>
       </main>
       <Footer />

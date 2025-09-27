@@ -9,10 +9,18 @@ import {
   DocumentTextIcon,
   PhotoIcon,
   SparklesIcon,
+  TableCellsIcon,
+  PresentationChartBarIcon,
+  PencilIcon,
+  ClipboardDocumentCheckIcon,
+  ArrowPathIcon,
+  RectangleStackIcon,
+  LockClosedIcon,
 } from '@heroicons/react/24/outline';
 
 const navigation = [
   { name: 'Home', href: '/' },
+  { name: 'Edit PDF', href: '/edit-pdf', highlight: true },
 ];
 
 const toolsCategories = {
@@ -21,6 +29,10 @@ const toolsCategories = {
     tools: [
       { name: 'Word to PDF', href: '/word-to-pdf', icon: DocumentTextIcon, popular: true },
       { name: 'PDF to Word', href: '/pdf-to-word', icon: DocumentTextIcon, popular: true },
+      { name: 'Excel to PDF', href: '/excel-to-pdf', icon: TableCellsIcon },
+      { name: 'PDF to Excel', href: '/pdf-to-excel', icon: TableCellsIcon },
+      { name: 'PowerPoint to PDF', href: '/powerpoint-to-pdf', icon: PresentationChartBarIcon },
+      { name: 'PDF to PowerPoint', href: '/pdf-to-powerpoint', icon: PresentationChartBarIcon },
       { name: 'JPG to PDF', href: '/jpg-to-pdf', icon: PhotoIcon, popular: true },
       { name: 'PDF to JPG', href: '/pdf-to-jpg', icon: PhotoIcon, popular: true },
     ]
@@ -30,6 +42,22 @@ const toolsCategories = {
     tools: [
       { name: 'Merge PDFs', href: '/merge-pdf', icon: DocumentDuplicateIcon, popular: true },
       { name: 'Split PDF', href: '/split-pdf', icon: ScissorsIcon, popular: true },
+      { name: 'Rotate PDF', href: '/rotate-pdf', icon: ArrowPathIcon },
+      { name: 'Extract Pages', href: '/extract-pages', icon: RectangleStackIcon },
+    ]
+  },
+  'Editor': {
+    color: 'from-purple-500 to-pink-500',
+    tools: [
+      { name: 'Edit PDF', href: '/edit-pdf', icon: PencilIcon, popular: true },
+      { name: 'Add Watermark', href: '/add-watermark', icon: SparklesIcon },
+      { name: 'Sign PDF', href: '/sign-pdf', icon: ClipboardDocumentCheckIcon, popular: true },
+    ]
+  },
+  'Security': {
+    color: 'from-red-500 to-orange-500',
+    tools: [
+      { name: 'Protect PDF', href: '/protect-pdf', icon: LockClosedIcon },
     ]
   },
   'Optimize': {
@@ -107,12 +135,17 @@ export default function Navbar() {
               key={item.name}
               to={item.href}
               className={`text-sm font-semibold leading-6 transition-all duration-200 relative group px-3 py-2 rounded-lg ${
-                location.pathname === item.href 
-                  ? 'text-blue-600 bg-blue-50' 
-                  : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
+                item.highlight 
+                  ? 'bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-lg hover:shadow-xl hover:scale-105' 
+                  : location.pathname === item.href 
+                    ? 'text-blue-600 bg-blue-50' 
+                    : 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
               }`}
             >
               {item.name}
+              {item.highlight && (
+                <SparklesIcon className="inline h-3 w-3 ml-1" />
+              )}
             </Link>
           ))}
           
@@ -238,13 +271,18 @@ export default function Navbar() {
                     key={item.name}
                     to={item.href}
                     className={`block rounded-lg px-3 py-3 text-base font-semibold transition-colors ${
-                      location.pathname === item.href
-                        ? 'bg-blue-50 text-blue-600'
-                        : 'text-gray-900 hover:bg-gray-50'
+                      item.highlight
+                        ? 'bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-lg'
+                        : location.pathname === item.href
+                          ? 'bg-blue-50 text-blue-600'
+                          : 'text-gray-900 hover:bg-gray-50'
                     }`}
                     onClick={() => setMobileMenuOpen(false)}
                   >
-                    {item.name}
+                    <div className="flex items-center space-x-2">
+                      <span>{item.name}</span>
+                      {item.highlight && <SparklesIcon className="h-4 w-4" />}
+                    </div>
                   </Link>
                 ))}
               </div>
